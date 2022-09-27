@@ -62,12 +62,19 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: 
+
+  The method create in toys_controller had a typo, I fixed this bug by removing the extra s in Toys to get the correct singular model name of Toy.
 
 - Update the number of likes for a toy
 
   - How I debugged:
 
+  React was expecting a response from the server but our rails application was not returning any. I made sure the rails application was rendering a json response using: render json: toy
+  This fixed the bug
+
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+
+  I found that in routes, destroy had not been defined. I included it the list of routes I wanted created by the resources
